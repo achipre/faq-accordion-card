@@ -1,0 +1,109 @@
+:root{
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+html{
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: .75rem;
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem;
+  padding: 1.82rem;
+  padding-top: 0;
+  background-color: white;
+  border-radius: 1.7rem;
+  box-shadow: 2px 2px 30px var(--very-dark-grayish-blue);
+}
+main figcaption{
+  padding: 6%;
+  margin-top: -46%;
+}
+main figcaption .bgIllustration{
+  transform: translateY(-74%);
+  width: 100%;
+}
+
+main h1{
+  margin-top: 11px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+main .question{
+  margin-top: -30%;
+  font-size: .9rem;
+  color: var(--very-dark-desaturated-blue);
+}
+label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+img{
+  transition: transform .3s ease-in-out;
+}
+p{
+  display: flex;
+  opacity: 0;
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+}
+hr{
+  margin-top: 0px;
+  margin-bottom: 1rem;
+  border: solid 1px var(--light-grayish-blue);
+}
+input:checked+label[for='questionOne'] img,
+input:checked+label[for='questionTwo'] img,
+input:checked+label[for='questionThree'] img,
+input:checked+label[for='questionFour'] img,
+input:checked+label[for='questionFive'] img{
+  transition: transform .3s ease-in-out;
+  transform: rotate(180deg);
+}
+input:checked ~ label[for='questionOne'],
+input:checked+label[for='questionTwo'],
+input:checked+label[for='questionThree'],
+input:checked+label[for='questionFour'],
+input:checked+label[for='questionFive']{
+  font-weight: 700;
+}
+#questionOne:checked ~ .answerOne,
+#questionTwo:checked ~ .answerTwo,
+#questionThree:checked ~ .answerThree,
+#questionFour:checked ~ .answerFour,
+#questionFive:checked ~ .answerFive
+{
+  overflow: hidden;
+  margin-top: 0;
+  transition: height .3s ease-in-out;
+  animation: pagraph .2s both ease-in-out
+}
+@keyframes pagraph {
+  0%{
+    padding: 0;
+    height: 0;
+    opacity: 0;
+  }
+  100%{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 100%;
+    opacity: 1;
+  }
+}
