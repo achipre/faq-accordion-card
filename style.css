@@ -22,7 +22,6 @@ main{
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 1rem;
   padding: 1.6rem;
   padding-left: 1.6rem;
   padding-right: 1.4rem;
