@@ -137,47 +137,52 @@ input:checked+label[for='questionFive']{
 }
 @media (min-width: 1024px) {
   main {
-    padding-right: 6.9rem;
+    padding-right: 8.5rem;
+    padding-left: 0;
     max-width: 784px;
     flex-direction: row;
     align-items: center;
     padding-bottom: 0;
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-position: -576px -295px;
+    background-repeat: no-repeat;
   }
   main figcaption {
-    width: 100%;
-    overflow: hidden;
+    width: 135%;
     position: relative;
-    /* padding: 0; */
-    /* padding-right: 0; */
+    padding: 0;
+    padding-right: 0;
     margin-top: 0;
-    /* padding-top: 3.4rem; */
-    /* padding-bottom: 4.4rem; */
-    transform: translateX(-110px);
+    padding-top: 3.4rem;
+    padding-bottom: 4.4rem;
+    background-image: url('./images/illustration-woman-online-desktop.svg');
+    background-position: -84px 58px;
+    background-repeat: no-repeat;
   }
   .illustration{
     display: none;
+  }
+  .illustrationDesktop{
+    opacity: 0;
   }
   .illustrationDesktop, .illustrationBox{
     display: block;
   }
   main figcaption .bgIllustration{
     display: none;
-
-  }
-  main figcaption .bgIllustrationDesktop{
-    display: block;
-    position: absolute;
-    width: 960px;
-    left: -488px;
-    top: -306px;
-    z-index: -1;
-    overflow: hidden;
   }
   .illustrationBox{
+    z-index: 100;
     position: absolute;
-    top: 134px;
-    left: -10px;
-    filter: drop-shadow(-5px 6px 4px var(--very-dark-desaturated-blue));
+    top: 192px;
+    left: -93px;
+    filter: drop-shadow(-1px 4px 4px var(--very-dark-desaturated-blue));
+    animation: box 2s ease-in-out infinite;
+  }
+  @keyframes box {
+    0%, 100%{left: -93px;}
+    50%{left: -123px;}
+    
   }
   main h1{
     padding-top: 3.4rem;
@@ -185,10 +190,8 @@ input:checked+label[for='questionFive']{
     margin-bottom: 37px;
     text-align: start;
   }
- 
   main .question{
     padding: 0;
-    transform: translateX(-1.4rem);
     margin-top: 0;
     max-width: 320px;
     padding-bottom: 4.4rem;
